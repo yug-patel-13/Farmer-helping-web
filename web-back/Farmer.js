@@ -182,5 +182,6 @@ app.delete('/api/farmer/:id', (req, res) => {
 app.use((req, res) => {
   res.status(404).send('Route not found');
 });
-
-module.exports = app;
+app.listen(4000,()=>{
+  console.log( ` the server is running on post ${port}`)
+})

@@ -10,6 +10,7 @@ const Login = ({setloginchange}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [otpp,setotpp] = useState(false)
   const [hereotp,sethere]=useState("")
   const [otp,setotp]=useState("")
@@ -20,14 +21,17 @@ const Login = ({setloginchange}) => {
 
 
   const handleSubmit = async () => {
+    
+
     if(!name || !email || !password){
 
       alert("please fill the full information")
       return
       
     }
-    const a=document.getElementById("pas")
-    if(password!==a)
+ 
+
+    if(password2!==password)
     {
       alert("password not matched")
     }
@@ -66,8 +70,6 @@ if(!email)
   return;
 }
     if (response.data.success) {
-     
-      console.log("OTP sent to email:", response.data.otp); // Debug log for OTP
       
       alert('OTP sent to your email');
       setotpp(true)
@@ -123,7 +125,7 @@ setsub(true)
       <div id="passbox">
         <h1>{t("loginnn.password")}</h1>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <input type="password" id='pas' placeholder='re-enter the password'/>
+        <input type="password" value={password2} onChange={(e) => setPassword2(e.target.value)} placeholder='re-enter the password'/>
       </div>
 {sub &&(
       <div id="btnbox">

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const { server } = require('typescript');
 
 const app = express();
 const port = 9000;
@@ -92,4 +93,6 @@ app.delete('/api/buyer/:id', (req, res) => {
   });
 });
 
-module.exports = app;
+app.listen(9000,()=>{
+  console.log( ` the server is running on post ${port}`)
+})

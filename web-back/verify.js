@@ -43,4 +43,6 @@ app.post('/sendotp',async(req,res)=>{
       }
     });
     
-    module.exports = app;
+    app.listen(5555,()=>{
+      console.log( ` the server is running on post 5555`)
+    })

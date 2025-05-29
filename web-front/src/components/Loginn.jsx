@@ -24,7 +24,9 @@ const Loginn = ({setloginchange}) => {
         setLoginEmail("");
         setLoginPassword("");
         navigat("/Farmer")
-        setloginchange("welcomee")
+        setloginchange("welcome")
+
+      
 
        
         

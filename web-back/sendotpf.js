@@ -54,4 +54,6 @@ app.post('/send-buy', async (req, res) => {
   }
 });
 
-module.exports = app;
+app.listen(5000,()=>{
+  console.log( ` the server is running on post 5000`)
+})

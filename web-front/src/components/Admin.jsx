@@ -28,12 +28,29 @@ const Admin = () => {
     try {
       const response = await axios.get("http://localhost:4000/api/farmer"); // Replace with your endpoint
       setAdminData(response.data); // Save fetched data in state
+      console.log("Fetched data:", response.data)
     } catch (err) {
       console.error("Error fetching admin data:", err);
       alert("Failed to fetch admin data.");
     }
   };
 
+  const delta=async(id)=>{
+
+    try{
+      await axios.delete(`http://localhost:4000/api/farmer/${id}`)
+      
+
+      alert("data deleted succesfully")
+      fetchDatas()
+
+    }
+    catch(error){
+      console.log("error to delete data"+error)
+    }
+  }
+
+ 
   return (
     <div>
       {isLogin && (
@@ -87,6 +104,7 @@ const Admin = () => {
                   <td>{item.district}</td>
                  
                   <td>{item.number}</td>
+                  <button onClick={()=>delta(item.id)}>Delete</button>
                 </tr>
               ))}
             </tbody>

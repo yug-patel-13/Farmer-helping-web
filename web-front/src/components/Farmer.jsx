@@ -187,7 +187,7 @@ const send_buyer=async()=>{
        
         console.log("OTP sent to email:", response.data.otp); // Debug log for OTP
         
-        alert('OTP sent to your email');
+        alert('email send succesfully');
       } else {
         alert('Failed to send OTP');
       }

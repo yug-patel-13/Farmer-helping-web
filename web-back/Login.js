@@ -98,4 +98,6 @@ app.delete("/api/agritech/:id", (req, res) => {
   });
 });
 
-module.exports = app;
+app.listen(3111,()=>{
+  console.log( ` the server is running on post ${port}`)
+})
